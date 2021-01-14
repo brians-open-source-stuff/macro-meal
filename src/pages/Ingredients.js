@@ -5,7 +5,11 @@ export default function Ingredients() {
 
 	useEffect(function() {
 		fetch(".netlify/functions/get-ingredients")
-			.then(res => res.json())
+			.then(res => {
+				console.log(res);
+				if (!res.ok) return;
+				return res.json();
+			})
 			.then(function(data) {
 				setIngredients(data);
 			});
