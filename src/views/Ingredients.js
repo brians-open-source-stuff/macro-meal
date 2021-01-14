@@ -4,14 +4,16 @@ export default function Ingredients() {
 	var tableRef = useRef();
 	let [ingredients, setIngredients] = useState([]);
 
-	useEffect(async function() {
-		var res = await fetch(".netlify/functions/get-ingredients");
-		try {
-			setIngredients(await res.json());
-		} catch (error) {
-			setIngredients([]);
-			console.log(error);
-		}
+	useEffect(function() {
+		(async function() {
+			var res = await fetch(".netlify/functions/get-ingredients");
+			try {
+				setIngredients(await res.json());
+			} catch (error) {
+				setIngredients([]);
+				console.log(error);
+			}
+		}())
 	}, []);
 
 	function filter(e) {
