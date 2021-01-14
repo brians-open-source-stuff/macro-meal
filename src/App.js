@@ -2,7 +2,8 @@ import { Router } from '@reach/router';
 import 'materialize-css/dist/css/materialize.min.css';
 import FAB from './components/FAB';
 import Menu from './components/Menu';
-import Ingredients from './pages/Ingredients';
+import Ingredients from './views/Ingredients';
+import "./App.css";
 
 function App() {
 	
