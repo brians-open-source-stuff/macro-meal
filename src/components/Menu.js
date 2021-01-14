@@ -6,6 +6,7 @@ export default function Menu() {
 	useEffect(function mount() {
 		var Menuref = document.querySelectorAll(".sidenav");
 		var instance = M.Sidenav.init(Menuref, {});
+		console.log(instance);
 	});
 
 	return (
