@@ -5,9 +5,8 @@ import M from "materialize-css";
 export default function FAB() {
 	useEffect(function mount() {
 		var FABref = document.querySelectorAll(".fixed-action-btn");
-		console.log(FABref)
-		M.FloatingActionButton.init(FABref, {})
-	});
+		M.FloatingActionButton.init(FABref)
+	}, []);
 
 	return (
 		<div className="fixed-action-btn">

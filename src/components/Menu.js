@@ -5,8 +5,10 @@ import { useEffect } from "react";
 export default function Menu() {
 	useEffect(function mount() {
 		var Menuref = document.querySelectorAll(".sidenav");
-		var instance = M.Sidenav.init(Menuref, {});
-		console.log(instance);
+		var instances = M.Sidenav.init(Menuref);
+		Menuref[0].addEventListener("click", e => {
+			instances[0].close();
+		});
 	});
 
 	return (
